@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Function that takes twp args
+
+
+
+add_number() {
+    
+    #$1;first number,$2; second number
+    local result=$(($1 + $2))
+    echo "$1 + $2 = $results"
+
+}
+multiply_num() {
+
+    echo "$1 * $2 = $(($1 * $2))"
+}
+
+#Test the calculator
+
+echo "=== SIMPLE CALCULATOR ==="
+
+add_number 5 7
+multiply_num 10 4
