@@ -9,6 +9,10 @@ BLUE='\033[0;34m'
 NC='\033[0m'#No colour
 
 # Print Coloured message
+# $1:colour
+# $2:message
+# $3:reset colour
+# -e:allows colour escape sequence to work
 print_colour() {
     echo -e "${1}${2}${NC}"
 
@@ -17,7 +21,7 @@ print_colour() {
 
 show_system_info() {
      clear
-     print_color $BLUE "=== SYSTEM INFORMATION ==="
+     print_colour $BLUE "=== SYSTEM INFORMATION ==="
      echo""
 
      echo "Hostname: $(hostname)"
@@ -35,10 +39,10 @@ show_disc_usage() {
       df -h | head -10
       echo""
 
-      df -h | tail -n + 2 | while read line; do
+      df -h | tail -n +2 | while read line; do
           use_percent=$(echo $line | awk '{print $5}' | sed 's/%//')
     	  if [[ $use_percent -gt 80 ]]; then
-              print_colour $RED "Warning $(echo $line | awk 'print $1') is ${use_percent}% full"
+              print_colour $RED "Warning $(echo $line | awk '{print $1}') is ${use_percent}% full"
           fi
       done
 
