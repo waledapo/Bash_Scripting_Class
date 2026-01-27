@@ -29,7 +29,7 @@ show_system_info() {
      echo "Uptime: $(uptime -p)"
      echo "Date: $(date)"
 
-     read -p "Press Enter to Continue: "
+     read -p "Press Enter to Continue..."
 }
 #Show disc usage
 show_disc_usage() {
@@ -47,7 +47,7 @@ show_disc_usage() {
       done
 
      echo ""
-     read -p "Press Enter to continue: "
+     read -p "Press Enter to continue..."
 
 }
 
@@ -67,7 +67,7 @@ monitor_processes() {
     ps aux --sort=%mem | head -6
     echo ""
 
-     read -p "Press Enter to continue: "
+     read -p "Press Enter to continue..."
 
 }
 
@@ -91,7 +91,7 @@ create_user() {
       fi
 
       echo ""
-      read -p "Press Enter to continue: "
+      read -p "Press Enter to continue..."
 }
 #Show main menu
 
