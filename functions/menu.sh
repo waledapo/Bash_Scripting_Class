@@ -29,7 +29,7 @@ show_system_info() {
      echo "Uptime: $(uptime -p)"
      echo "Date: $(date)"
 
-     read -p "Press Enter to Continue: "
+     read -p "Press Enter to Continue..."
 }
 #Show disc usage
 show_disc_usage() {
@@ -39,15 +39,15 @@ show_disc_usage() {
       df -h | head -10
       echo""
 
-      df -h | tail -n +2 | while read line; do
+      df -h | tail -n + 2 | while read line; do
           use_percent=$(echo $line | awk '{print $5}' | sed 's/%//')
     	  if [[ $use_percent -gt 80 ]]; then
-              print_colour $RED "Warning $(echo $line | awk '{print $1}') is ${use_percent}% full"
+          print_colour $RED "Warning $(echo $line | awk '{print $1}') is ${use_percent}% full"
           fi
       done
 
      echo ""
-     read -p "Press Enter to continue: "
+     read -p "Press Enter to continue..."
 
 }
 
@@ -67,7 +67,7 @@ monitor_processes() {
     ps aux --sort=%mem | head -6
     echo ""
 
-     read -p "Press Enter to continue: "
+     read -p "Press Enter to continue..."
 
 }
 
@@ -91,7 +91,7 @@ create_user() {
       fi
 
       echo ""
-      read -p "Press Enter to continue: "
+      read -p "Press Enter to continue..."
 }
 #Show main menu
 
